@@ -11,8 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(routes);
 
+
 db.once('open', () => {
     app.listen(PORT, () => {
         console.log(`api server listening on ${PORT}`);
-    })
-})
+    });
+});
