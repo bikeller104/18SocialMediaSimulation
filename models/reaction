@@ -10,7 +10,7 @@ const reactionSchema = new Schema(
         createdAt:
         {
             type: Date,
-            default: new Date(),
+            default: Date.now,
             get: formatDate,
         },
         username: [

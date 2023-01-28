@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const regex = new RegExp(`^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g`)
+//const regex = new RegExp(`^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g`)
 
 
 const userSchema = new Schema(
@@ -12,12 +12,12 @@ const userSchema = new Schema(
         email: {
             type: String, required: true,
             unique: true, 
-            validate:
-            {
-                validator: function(value) {
-                    return regex.test(value);
-                }
-            }
+            // validate:
+            // {
+            //     validator: function(value) {
+            //         return regex.test(value);
+            //     }
+            // }
         },
         thoughts: [
             {
@@ -38,7 +38,7 @@ const userSchema = new Schema(
     }
 );
 
-userSchema.virtuals('friendCount').get(function () {
+userSchema.virtual('friendCount').get(function () {
     return `${this.friends.Count()}`;
 });
 
