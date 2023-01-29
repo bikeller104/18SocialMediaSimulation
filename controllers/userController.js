@@ -2,27 +2,12 @@ const User = require('../models/user');
 
 module.exports = {
     getUsers(req,res) {
-        // try{
-        console.log("get route hit")
         User.find()
             .then(users => res.json(users))
-            .catch(err => res.status(500).json(err));
-        // console.log("get route hit");
-        // try{
-
-        //     User.find((err,users) =>{
-        //         if (users){
-        //             res.status(200).json(users)
-        //         }
-        //         else{
-        //             res.status(500).json(err);
-        //         }
-        //     });
-        // }
-        // catch(err){
-        //     res.status(500).json(err);
-        // }
-        console.log("get route finished");
+            .catch(err => {
+                this.console.log(err);
+                res.status(500).json(err);
+            });
     },
     getUser(req,res) {
         User.findById(req.params.id)
