@@ -21,7 +21,7 @@ module.exports = {
             });
     },
     updateThought(req,res){
-        Thought.findOneAndUpdate(req.params.id)
+        Thought.findOneAndUpdate({_id: req.params.id},req.body)
             .then(thought => res.json(thought))
             .catch(err => res.status(500).json(err));
     },

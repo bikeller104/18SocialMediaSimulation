@@ -20,7 +20,7 @@ module.exports = {
         .catch(err => res.status(500).json(err));
     },
     updateUser(req,res){
-        User.findOneAndUpdate(req.body)
+        User.findOneAndUpdate({_id: req.params.id},req.body)
         .then(userData => res.json(userData))
         .catch(err => res.status(500).json(err));
     },
