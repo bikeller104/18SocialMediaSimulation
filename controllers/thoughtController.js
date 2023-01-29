@@ -22,6 +22,8 @@ module.exports = {
     },
     updateThought(req,res){
         Thought.findOneAndUpdate(req.params.id)
+            .then(thought => res.json(thought))
+            .catch(err => res.status(500).json(err));
     },
     deleteThought(req,res){
         Thought.findOneAndDelete({_id: req.params.id})
