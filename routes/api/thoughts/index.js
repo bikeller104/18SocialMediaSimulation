@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const p= (content) => console.log(content);
+const {getThoughts, getThought, createThought, deleteThought} = require('./.././.././../controllers/thoughtController');
 
 router.route('/')
 .get(
