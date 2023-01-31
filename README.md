@@ -16,6 +16,7 @@
 This project simulates a social media network and demonstrates how the backend database could be configured.
 
 ## Visuals
+[appShowcase.webm](https://user-images.githubusercontent.com/110364905/215628567-037ce844-7f1f-4fbd-93b0-2a41ffc2358f.webm)
 
 
 ## Installation instructions
